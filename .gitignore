@@ -2,6 +2,10 @@
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,linux,cmake
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,linux,cmake
 
+# temp file
+
+~*
+
 ### CMake ###
 CMakeLists.txt.user
 CMakeCache.txt
