@@ -22,7 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "OLED.h"
+#include "oled.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -90,7 +90,8 @@ int main(void)
   // OLED init config
   OLED_Init();
   OLED_Clear();
-  OLED_ShowString(0, 0, "Hello", OLED_8X16);
+  // OLED_ShowNum(0, 0, 12345678, 8, OLED_8X16);
+  OLED_ShowString(0,6,"ASCII:",16);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -102,7 +103,7 @@ int main(void)
     /* USER CODE BEGIN 3 */
     // heart beat for check if the program is running
     HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
-    HAL_Delay(1000);
+    HAL_Delay(2000);
 
     //
   }
