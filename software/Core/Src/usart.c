@@ -53,7 +53,7 @@ void MX_USART1_UART_Init(void)
   /* USER CODE BEGIN USART1_Init 2 */
 
   // Start UART reception with interrupt
-  HAL_UART_Receive_IT(&huart1, RxBufferOne, sizeof(RxBufferOne));
+  HAL_UART_Receive_IT(&huart1, RxBufferOne, RxBufferOneSize);
   /* USER CODE END USART1_Init 2 */
 }
 

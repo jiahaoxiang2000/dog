@@ -90,13 +90,17 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-  // OLED init config
+
+  // OLED init config, not working 
+  // TODO: fix the OLED display
   OLED_Init();
   OLED_Clear();
   // OLED_ShowNum(0, 0, 12345678, 8, OLED_8X16);
-  OLED_ShowString(0, 6, "ASCII:", 16);
+  // OLED_ShowString(0, 6, "ASCII:", 16);
 
-  Serial_SendStringOne("Hello Xjh!\r\n");
+  // Serial(uart) init
+  Serial_Init();
+  Serial_SendStringOne("Hello Dog!\r\n");
 
   /* USER CODE END 2 */
 

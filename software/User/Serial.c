@@ -60,6 +60,7 @@ void Serial_SendNumber(uint32_t Number, uint8_t Length)
 
 int fputc(int ch, FILE *f)
 {
+	(void)f;
 	Serial_SendByteOne(ch);
 	return ch;
 }
@@ -74,7 +75,7 @@ void Serial_Printf(char *format, ...)
 	Serial_SendStringOne(String);
 }
 
-uint8_t Serial_GetRxFlag(void)
+uint8_t Serial_GetRxFlagOne(void)
 {
 	if (Serial_RxFlagOne == 1)
 	{
@@ -84,9 +85,9 @@ uint8_t Serial_GetRxFlag(void)
 	return 0;
 }
 
-uint8_t Serial_GetRxData1(void)
+uint8_t Serial_GetRxDataOne(void)
 {
-	return Serial_RxData1;
+	return RxBufferOne[0];
 }
 uint8_t Serial_GetRxData3(void)
 {
@@ -99,11 +100,11 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 	{
 		// Process received data
 		// Example: Echo received data
-		HAL_UART_Transmit(&huart1, RxBufferOne, sizeof(RxBufferOne), HAL_MAX_DELAY);
+		HAL_UART_Transmit(&huart1, RxBufferOne, RxBufferOneSize, HAL_MAX_DELAY);
 		Serial_RxFlagOne = 1;
 
 		// Restart UART reception
-		HAL_UART_Receive_IT(&huart1, RxBufferOne, sizeof(RxBufferOne));
+		HAL_UART_Receive_IT(&huart1, RxBufferOne, RxBufferOneSize);
 	}
 }
 
