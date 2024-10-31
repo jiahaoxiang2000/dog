@@ -103,7 +103,7 @@ int main(void)
     /* USER CODE BEGIN 3 */
     // heart beat for check if the program is running
     HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
-    HAL_Delay(2000);
+    HAL_Delay(1000);
 
     //
   }

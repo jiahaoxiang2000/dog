@@ -6,7 +6,14 @@ After the cmake build process, we can download the firmware to the hardware. We 
 
 ```
 openocd -f openocd.cfg -c "program build/Release/dog.elf verify reset exit"
+
 ```
+
+## experience
+
+- OLED IIC display, not inverse connect the power, easy to burn the display.
+
+
 
 ## Reference
 
