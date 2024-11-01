@@ -135,14 +135,28 @@ int main(void)
     // heart beat for check if the program is running
     HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
     HAL_Delay(3000);
-
-
+    // left forward
     Servo_SetAngle(&htim3, TIM_CHANNEL_4, 0);
+    // right backward
+    Servo_SetAngle(&htim3, TIM_CHANNEL_1, 180);
+    // right forward
+    Servo_SetAngle(&htim3, TIM_CHANNEL_2, 180);
+    // left backward
+    Servo_SetAngle(&htim3, TIM_CHANNEL_3, 0);
+
     // check the PWM signal is setting
 
     HAL_Delay(3000);
-
+    // left forward
     Servo_SetAngle(&htim3, TIM_CHANNEL_4, 90);
+    // right backward
+    Servo_SetAngle(&htim3, TIM_CHANNEL_1, 90);
+    // right forward
+    Servo_SetAngle(&htim3, TIM_CHANNEL_2, 90);
+    // left backward
+    Servo_SetAngle(&htim3, TIM_CHANNEL_3, 90);
+
+
 
     //
   }
