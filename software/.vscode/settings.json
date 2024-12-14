@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "main.h": "c",
-        "servo.h": "c"
+        "servo.h": "c",
+        "tim.h": "c",
+        "arduino.h": "c"
     }
 }
