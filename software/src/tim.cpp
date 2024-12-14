@@ -25,27 +25,13 @@ const PinMap PinMap_TIM[] = {
 HardwareTimer *Timer3 = new HardwareTimer(TIM3);
 
 void setupTimer3() {
-    __HAL_RCC_TIM3_CLK_ENABLE();
+    // __HAL_RCC_TIM3_CLK_ENABLE();
 
-    // Configure PWM pins as AF output
-    for(int i = 0; i < 4; i++) {
-        pinMode(PWM_PINS[i], OUTPUT);
-        // Set pins to Alternate Function Push Pull mode
-        GPIO_InitTypeDef GPIO_InitStruct = {0};
-        GPIO_InitStruct.Pin = GPIO_PIN_6 | GPIO_PIN_7;  // PA6, PA7
-        GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-        GPIO_InitStruct.Pull = GPIO_NOPULL;
-        GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
-        HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-        
-        GPIO_InitStruct.Pin = GPIO_PIN_0 | GPIO_PIN_1;  // PB0, PB1
-        HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-    }
-    
+
     Timer3->pause();
     Timer3->setMode(1, TIMER_OUTPUT_COMPARE_PWM1, PWM_PINS[0]);
     Timer3->setMode(2, TIMER_OUTPUT_COMPARE_PWM1, PWM_PINS[1]);
-    Timer3->setMode(3, TIMER_OUTPUT_COMPARE_PWM1, PWM_PINS[2]);
+    Timer3->setMode(3, TIMER_OUTPUT_COMPARE_PWM1,  PWM_PINS[2]);
     Timer3->setMode(4, TIMER_OUTPUT_COMPARE_PWM1, PWM_PINS[3]);
     
     // Configure for 50Hz operation
