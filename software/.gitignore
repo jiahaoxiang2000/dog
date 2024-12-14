@@ -1,41 +1,46 @@
 # File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
-# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,linux,cmake
-# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,linux,cmake
+# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,macos,platformio
+# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,macos,platformio
 
-## temp build files
-/build
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
 
-### CMake ###
-CMakeLists.txt.user
-CMakeCache.txt
-CMakeFiles
-CMakeScripts
-Testing
-Makefile
-cmake_install.cmake
-install_manifest.txt
-compile_commands.json
-CTestTestfile.cmake
-_deps
+# Icon must end with two \r
+Icon
 
-### CMake Patch ###
-# External projects
-*-prefix/
 
-### Linux ###
-*~
+# Thumbnails
+._*
 
-# temporary files which can be created if a process still has a handle open of a deleted file
-.fuse_hidden*
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
 
-# KDE directory preferences
-.directory
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
 
-# Linux trash folder which might appear on any partition or disk
-.Trash-*
+### macOS Patch ###
+# iCloud generated files
+*.icloud
 
-# .nfs files are created when an open file is removed but is still being accessed
-.nfs*
+### PlatformIO ###
+.pioenvs
+.piolibdeps
+.clang_complete
+.gcc-flags.json
+.pio
 
 ### VisualStudioCode ###
 .vscode/*
@@ -56,7 +61,7 @@ _deps
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,linux,cmake
+# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,macos,platformio
 
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
 
