@@ -1,7 +1,7 @@
 #include "move.h"
 #include "tim.h"
 
-#define STEP_DELAY 200    // Delay between steps in ms
+#define STEP_DELAY 100    // Delay between steps in ms
 const uint8_t leg_pin[] = {
     PA6,  // Right back
     PA7,  // Right front
@@ -63,20 +63,18 @@ void moveForward() {
 }
 
 void trotGait() {
-    // Phase 1: Lift and move forward LF and RH
-    moveLegBackward(LF);
-    moveLegBackward(RH);
-    // Phase 2: Land LF and RH, lift and move forward RF and LH
-    landLeg(LF);
-    landLeg(RH);
-    moveLegBackward(RF);
-    moveLegBackward(LH);
-    // Phase 3: Land RF and LH
-    landLeg(RF);
-    landLeg(LH);
-    // Reset all legs to center position
-    landLeg(LF);
-    landLeg(RF);
-    landLeg(LH);
-    landLeg(RH);
+    // Phase 1: Move Front legs forward, Back legs backward
+        moveLegForward(LF);
+        moveLegForward(RF);
+        
+        moveLegBackward(RH);
+        moveLegBackward(LH);
+        //   delay(STEP_DELAY);
+    // Phase 2: Move Front legs backward, Back legs forward
+        moveLegBackward(LF);
+        moveLegBackward(RF);
+        moveLegForward(RH);
+        moveLegForward(LH);
+        //   delay(STEP_DELAY);
+        
 }
