@@ -25,9 +25,6 @@ const PinMap PinMap_TIM[] = {
 HardwareTimer *Timer3 = new HardwareTimer(TIM3);
 
 void setupTimer3() {
-    // __HAL_RCC_TIM3_CLK_ENABLE();
-
-
     Timer3->pause();
     Timer3->setMode(1, TIMER_OUTPUT_COMPARE_PWM1, PWM_PINS[0]);
     Timer3->setMode(2, TIMER_OUTPUT_COMPARE_PWM1, PWM_PINS[1]);
